@@ -1,0 +1,26 @@
+version: '3.5'
+
+services:
+  api:
+    build:
+      dockerfile: "Dockerfile"
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - "8910:5000"
+    volumes:
+      - ./save/:/.models
+      - /etc/localtime:/etc/localtime:ro
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"
+    networks:
+      - dev
+
+networks:
+  dev:
+    external:
+      name: dev-network
