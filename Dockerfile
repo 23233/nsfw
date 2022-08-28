@@ -1,8 +1,7 @@
 FROM python:3.8-slim-bullseye
 WORKDIR /app
-COPY ./requirements.txt .
+COPY ./build_requirements.txt ./requirements.txt
 RUN pip3 install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
-RUN pip3 uninstall opencv-python && pip3 install opencv-python-headless -i https://mirrors.aliyun.com/pypi/simple/
 COPY . /app
 
 EXPOSE 5000
