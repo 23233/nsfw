@@ -2,8 +2,7 @@ version: '3.5'
 
 services:
   api:
-    build:
-      dockerfile: "Dockerfile"
+    image: 23233/nsfw
     restart: always
     environment:
       - TZ=Asia/Shanghai
