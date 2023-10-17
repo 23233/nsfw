@@ -38,7 +38,7 @@ def predictionImg(imgPath):
 
 @app.route("/")
 def index():
-    return "首页"
+    return "nsfw检测Api"
 
 
 @app.route('/remote', methods=['POST'])
